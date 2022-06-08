@@ -11,7 +11,7 @@ class GeoDataController extends Controller
         if(in_array($route, $existingRoutes)){
             return \App\Models\GeoData::select('route', 'geo_data')->where('route', $route)->get()->first();
         } else {
-            return '404 Error -> Unknown route';
+            return response()->json(['message' => 'Unknown route'], 404);
         }
     }
 }

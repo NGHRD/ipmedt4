@@ -12,9 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// ->middleware('authKey')
 
-Route::get('/route/{route}', [\App\Http\Controllers\GeoDataController::class, 'show']);
+Route::get('/route/{route}', [\App\Http\Controllers\GeoDataController::class, 'show'])->middleware('authKey');
 
 Route::get('/', function () {
-    return 'Welcome To The Gouda Route API';
+    return response()->json(['message' => 'Welcome To The Gouda Route API'], 200);
 });
