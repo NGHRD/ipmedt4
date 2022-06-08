@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/route/{route}', [\App\Http\Controllers\GeoDataController::class, 'show']);
+
 Route::get('/', function () {
-    return view('welcome');
+    return 'Welcome To The Gouda Route API';
 });
