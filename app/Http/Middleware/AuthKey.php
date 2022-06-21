@@ -16,7 +16,7 @@ class AuthKey
      */
     public function handle(Request $request, Closure $next)
     {
-        $token = $request->header('API_KEY');
+        $token = $request->header('api-token');
         if($token != '3EA2329C95164F7EC63DF1B36ED35') {
             return response()->json(['message' => 'WRONG OR NO API KEY'], 401);
         }
