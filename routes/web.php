@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 // ->middleware('authKey')
 
-Route::get('/route/{route}', [\App\Http\Controllers\GeoDataController::class, 'show'])->middleware('authKey');
+Route::get('/route/{route}', [\App\Http\Controllers\GeoDataController::class, 'show']);
+
+Route::get('/secure/route/{route}', [\App\Http\Controllers\GeoDataController::class, 'show'])->middleware('authKey');
 
 Route::get('/', function () {
     return response()->json(['message' => 'Welcome To The Gouda Route API'], 200);
